@@ -10,33 +10,79 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GoogleAdsRouteImport } from './routes/google-ads'
+import { Route as LandingPagesRouteImport } from './routes/landing-pages'
+import { Route as MetaAdsRouteImport } from './routes/meta-ads'
+import { Route as RevopsRouteImport } from './routes/revops'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GoogleAdsRoute = GoogleAdsRouteImport.update({
+  id: '/google-ads',
+  path: '/google-ads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandingPagesRoute = LandingPagesRouteImport.update({
+  id: '/landing-pages',
+  path: '/landing-pages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MetaAdsRoute = MetaAdsRouteImport.update({
+  id: '/meta-ads',
+  path: '/meta-ads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RevopsRoute = RevopsRouteImport.update({
+  id: '/revops',
+  path: '/revops',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/google-ads': typeof GoogleAdsRoute
+  '/landing-pages': typeof LandingPagesRoute
+  '/meta-ads': typeof MetaAdsRoute
+  '/revops': typeof RevopsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/google-ads': typeof GoogleAdsRoute
+  '/landing-pages': typeof LandingPagesRoute
+  '/meta-ads': typeof MetaAdsRoute
+  '/revops': typeof RevopsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/google-ads': typeof GoogleAdsRoute
+  '/landing-pages': typeof LandingPagesRoute
+  '/meta-ads': typeof MetaAdsRoute
+  '/revops': typeof RevopsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/google-ads' | '/landing-pages' | '/meta-ads' | '/revops'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/google-ads' | '/landing-pages' | '/meta-ads' | '/revops'
+  id:
+    | '__root__'
+    | '/'
+    | '/google-ads'
+    | '/landing-pages'
+    | '/meta-ads'
+    | '/revops'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GoogleAdsRoute: typeof GoogleAdsRoute
+  LandingPagesRoute: typeof LandingPagesRoute
+  MetaAdsRoute: typeof MetaAdsRoute
+  RevopsRoute: typeof RevopsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +94,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/google-ads': {
+      id: '/google-ads'
+      path: '/google-ads'
+      fullPath: '/google-ads'
+      preLoaderRoute: typeof GoogleAdsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landing-pages': {
+      id: '/landing-pages'
+      path: '/landing-pages'
+      fullPath: '/landing-pages'
+      preLoaderRoute: typeof LandingPagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/meta-ads': {
+      id: '/meta-ads'
+      path: '/meta-ads'
+      fullPath: '/meta-ads'
+      preLoaderRoute: typeof MetaAdsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/revops': {
+      id: '/revops'
+      path: '/revops'
+      fullPath: '/revops'
+      preLoaderRoute: typeof RevopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GoogleAdsRoute: GoogleAdsRoute,
+  LandingPagesRoute: LandingPagesRoute,
+  MetaAdsRoute: MetaAdsRoute,
+  RevopsRoute: RevopsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
