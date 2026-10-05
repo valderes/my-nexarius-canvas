@@ -1,5 +1,5 @@
-// Número de WhatsApp da Nexarius — substituir pelo número real quando disponível.
-const WHATSAPP_NUMBER = "5511999999999";
+// Número de WhatsApp da Nexarius.
+const WHATSAPP_NUMBER = "5547991043088";
 
 export function whatsappLink(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
