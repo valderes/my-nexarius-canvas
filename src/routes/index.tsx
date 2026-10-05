@@ -143,11 +143,11 @@ function HomePage() {
     <main>
       {/* HERO */}
       <section className="hero-noise relative overflow-hidden border-b border-border">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-16 pt-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:pt-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-16 pt-16 sm:px-6 lg:items-start lg:grid-cols-[1.1fr_0.9fr] lg:pt-24">
           <div>
             <p className="flex items-center gap-2 font-mono text-xs tracking-[0.22em] text-gold">
               <span className="inline-block h-px w-8 bg-gold" aria-hidden="true" />
-              AGÊNCIA DE TRÁFEGO PAGO
+              TRÁFEGO PAGO
             </p>
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               Transforme
