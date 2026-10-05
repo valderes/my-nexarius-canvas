@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { OrbitSpheres } from "../components/OrbitSpheres";
 import { CtaSection } from "../components/CtaSection";
 import { whatsappLink } from "../lib/whatsapp";
 import magoNexarius from "../assets/mago-nexarius.png";
@@ -195,11 +194,8 @@ function HomePage() {
               alt="O mago Nexarius, personagem da marca, segurando um orbe de luz dourada"
               width={1024}
               height={1024}
-              className="w-full max-w-md drop-shadow-[0_0_60px_oklch(0.75_0.14_85/25%)]"
+              className="w-full max-w-lg drop-shadow-[0_0_60px_oklch(0.75_0.14_85/25%)]"
             />
-            <div className="-mt-12">
-              <OrbitSpheres size={220} />
-            </div>
           </div>
         </div>
 
